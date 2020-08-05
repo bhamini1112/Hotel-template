@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Destination</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <style>
+            .body {
+                margin: 0;
+                padding: 0;
+            }
+            .main-head-container {
+                width: 100%;
+                height: 100px;
+                position: fixed;
+                z-index: 3;
+                background-color: white;
+            }
+            .main-head {
+                width: 400px;
+                margin: 0 auto;
+                height: 100px;
+                z-index: 3;
+            }
+            .main-image {
+                width: 100px;
+                float: left;
+                z-index: 3;
+            }
+            .text-head {
+                font-weight: bold;
+                font-size: 25px;
+                padding: 25px 10px;
+            }
+            .top-nav {
+                background-color: crimson;
+                position: fixed;
+                top: 100px;
+                width: 100%;
+                z-index: 2;
+                border-bottom: 3px rgb(248, 110, 110) solid;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+            .top-nav a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 15px;
+                transition: 0.5s;
+            }
+            .top-nav a:hover {
+                background-color: rgb(248, 110, 110);
+                color: black;
+            }
+            .top-nav a.active {
+                background-color: rgb(248, 110, 110);
+                color: black;
+            }
+            .top-nav .icon {
+                display: none;
+            }   
+            .image-container {
+                background-image: url("https://elements-video-cover-images-0.imgix.net/files/174090714/preview.jpg?auto=compress&crop=edges&fit=crop&fm=jpeg&h=800&w=1200&s=efef72593c17f50cf31907c59eb4e853");
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                width: 100%;
+                top: 100px;
+                height:500px;
+                z-index: 1;
+                margin: 0;
+                padding: 155px 0px;
+            }        
+            .form-container {
+                background: white;
+                width: 1050px;
+                height: 230px;
+                margin: 0 auto;
+                padding: 10px;
+                border-radius: 5px;
+            }   
+            .destination{
+                width: 300px;
+                height: 45px;  
+                padding: 15px;
+                float: left;
+                margin: 20px;
+            }
+            .check-in{
+                width: 300px;
+                height: 45px;  
+                padding: 15px;
+                float: left;
+                margin: 20px;
+            }
+            .check-out{
+                width: 300px;
+                height: 45px;  
+                padding: 15px;
+                float: left;
+                margin: 20px;
+            }
+            .adult {
+                width: 215px;
+                height: 45px;
+                padding: 10px;
+                margin: 20px;
+                color: grey;
+            }
+            .children {
+                width: 215px;
+                height: 45px;
+                padding: 10px;
+                margin: 20px;
+                color: grey;
+            }
+            .room {
+                width: 215px;
+                height: 45px;
+                padding: 10px;
+                margin: 20px;
+                color: grey;
+            }
+            .check-button {
+                width: 215px;
+                height: 45px;
+                padding: 10px;
+                margin: 20px 7px;
+                background-color: crimson;
+                text-align: center;
+                color: white;
+                border: none;
+                border-radius: 3px;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+            .gen-text {
+                margin: 10px 25px;
+                float: left;
+                color: grey;
+            }
+            .help-option {
+                float: right;
+                font-weight: bold;
+                color: crimson;
+                margin: 10px 25px;
+            }
+            .home-section2 {
+                background: crimson;
+                width: 100%;
+                height: 350px;
+            }
+            .text-container {
+                width: 600px;
+                margin: 0 auto;
+                position: relative;
+                top: 125px;
+            }
+            .text-sec2 {
+                color: white;
+                font-size: 300%;
+                text-align: center;
+                margin: 15px;
+            }
+            .news-subs {
+                color: white;
+                text-align: center;
+            }
+            .subs-btn {
+                background-color: white;
+                text-align: center;
+                font-size: 130%;
+                border: none;
+                border-radius: 3px;
+                font-weight: bold;
+                padding: 15px;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+            .div-container {
+                text-align: center;
+                margin: 15px;
+            }
+            .home-sec3 {
+                width: 1150px;
+                margin: 10px auto;
+                height: 400px;
+            }
+            .sec3-part {
+                width: 330px;
+                margin: 25px;
+                height: 400px;
+                float: left;
+                padding: 10px;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+            .sec3-image {
+                width: 100px;
+                margin: 0px 115px;
+            }
+            .head-sec3 {
+                text-align: center;
+                color: crimson;
+                font-size: 150%;
+            }
+            .text-sec3 {
+                color: darkslategray;
+                font-size: 110%;
+                margin: 30px;
+                text-align: center;
+            }
+            .link-for-sec3 {
+                color: crimson;
+                margin: 0px 30px;
+                text-decoration: none;
+            }
+            .link-for-sec3:hover {
+                color: crimson;
+                text-decoration: none;
+            }
+            #portfolio {
+                background: rgb(211, 209, 209);
+                margin: 180px 0;
+                height: 600px;
+            }
+            .portfolio-holder {
+                width: 1100px;
+                margin: 0 auto;
+                height: 600px;
+            }
+            .sec1-portfolio {
+                margin: 100px 0;
+                padding: 0px;
+                background: white;
+                float: left;
+                height: 400px;
+            }
+            .sec1-pfhead {
+                background: crimson;
+                height: 100px;
+                padding: 35px 25px;
+            }
+            h3 {
+                color: white;
+            }
+            .destination-rec {
+                background: rgb(211, 209, 209);
+                margin: 20px;
+                height: 70px;
+                padding: 0;
+            }
+            .destination-rec:hover {
+                background-color: grey;
+                color: crimson;
+                transition: 0.5s;
+            }
+            .image-pf1 {
+                width: 90px;
+                height: 70px;
+                float: left;
+            }
+            .name-pf1 {
+                font-size: 150%;
+                padding: 15px;
+                text-align: center;
+            }
+            .sec2-images {
+                float:left;
+                width: 680px;
+                padding: 30px;
+                margin: 100px 0px 100px 50px;
+                height: 400px;
+                background-color: white;
+            }
+            .image-style {
+                width: 310px;
+                height: 170px;
+                float: left;
+                border: 2px white solid;
+            } 
+            .shown-element {
+                float:left;
+                width: 680px;
+                padding: 30px 25px;
+                margin: 100px 0px 100px 50px;
+                height: 400px;
+                background-color: white;
+                display: block;
+            }
+            h1 {
+                text-align: center;
+                font-size: 300%;
+                color: crimson;
+                margin: 50px;
+            }
+            .img-first {
+                width: 200px;
+                margin: 2px;
+                height: 150px;
+            }
+            #europe-image {
+                display: none;
+            }
+            #asia-image {
+                display: none;
+            }
+            #australia-image {
+                display: none;
+            }
+            @media screen and (max-width: 1100px) {
+                .form-container {
+                    height: 400px;
+                    width: 700px;
+                    margin: 0 auto;
+                }
+                .image-container {
+                    height: 530px;
+                    padding: 100px 0px;
+                }
+                .destination {
+                    width: 640px;
+                }
+                .adult {
+                    width: 300px;
+                }
+                .children {
+                    width: 300px;
+                    float: left;
+                }
+                .room {
+                    width: 300px;
+                    float: left;
+                }
+                .check-button {
+                    width: 300px;
+                    margin: 20px;
+                }
+                .sec3-part {
+                    width: 250px;
+                    height: 330px;
+                }
+                .sec3-image {
+                    width: 70px;
+                    margin: 0px 90px;
+                }
+                .home-sec3 {
+                    width: 900px;
+                }
+                .head-sec3 {
+                    font-size: 120%;
+                }
+                .text-sec3 {
+                    color: darkslategray;
+                    font-size: 100%;
+                    margin: 20px;
+                }
+                .link-for-sec3 {
+                    margin: 0px 20px;
+                }
+                #portfolio {
+                    margin: 180px 0;
+                    height: 600px;
+                }
+                .portfolio-holder {
+                    width: 750px;
+                    margin: 0 auto;
+                    height: 600px;
+                }
+                .sec1-portfolio {
+                    margin: 80px 0;
+                    float: left;
+                    height: 400px;
+                }
+                .sec1-pfhead {
+                    height: 100px;
+                    padding: 30px 20px;
+                }
+                h3 {
+                    font-size: 150%;
+                }
+                .destination-rec {
+                    margin: 20px;
+                    height: 70px;
+                    padding: 0;
+                }
+                .image-pf1 {
+                    width: 80px;
+                }
+                .name-pf1 {
+                    font-size: 130%;
+                    padding: 10px;
+                }
+                .sec2-images {
+                    float:left;
+                    width: 400px;
+                    padding: 30px;
+                    margin: 100px 0px 100px 50px;
+                    height: 400px;
+                    background-color: white;
+                }
+                .image-style {
+                    width: 200px;
+                    height: 170px;
+                    float: left;
+                    border: 2px white solid;
+                } 
+                .shown-element {
+                    float:left;
+                    width: 680px;
+                    padding: 30px 25px;
+                    margin: 100px 0px 100px 50px;
+                    height: 400px;
+                    background-color: white;
+                    display: block;
+                }
+                h1 {
+                    text-align: center;
+                    font-size: 300%;
+                    color: crimson;
+                    margin: 50px;
+                }
+                .img-first {
+                    width: 200px;
+                    margin: 2px;
+                    height: 150px;
+                }
+            }
+            @media screen and (max-width: 750px) {
+                .image-container {
+                    height: 600px;
+                }
+                .form-container {
+                    height: 450px;
+                    width: 500px;
+                    margin: 0 auto;
+                } 
+                .check-in {
+                    width: 200px;
+                }
+                .check-out {
+                    width: 200px;
+                }
+                .destination {
+                    width: 440px;
+                }
+                .adult {
+                    width: 200px;
+                }
+                .children {
+                    width: 200px;
+                }
+                .room {
+                    width: 200px;
+                }
+                .check-button {
+                    width: 200px;
+                }
+                .help-option {
+                    float: left;
+                }
+                .sec3-part {
+                    width: 500px;
+                    height: 200px;
+                }
+                .sec3-image {
+                    width: 80px;
+                    float: left;
+                    margin: 0;
+                }
+                .home-sec3 {
+                    width: 600px;
+                }
+                .head-sec3 {
+                    font-size: 120%;
+                    float: left;
+                    margin: 20px 0;
+                }
+                .text-sec3 {
+                    color: darkslategray;
+                    font-size: 100%;
+                    margin: 20px;
+                }
+                .link-for-sec3 {
+                    margin: 0px 20px;
+                }
+            }
+            @media screen and (max-width: 600px) {
+                .top-nav a:not(:first-child) {
+                    display: none;
+                }
+                .top-nav a.icon {
+                    float: right;
+                    display: block;
+                }
+                .top-nav.responsive {
+                    position: relative;
+                }
+                .top-nav.responsive a.icon {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+                .top-nav.responsive a {
+                    float: none;
+                    display: block;
+                    text-align: left;
+                }
+                .top-nav {
+                    top: 70px;
+                }
+                .main-head-container {
+                    height: 70px;
+                }
+                .main-head {
+                    width: 250px;
+                }
+                .main-image {
+                    width: 50px;
+                    margin: 5px;
+                    float: left;
+                }
+                .text-head {
+                    font-size: 100%;
+                    margin: 10px;
+                    float: left;
+                    position: relative;
+                    bottom: 20px;
+                }
+                .image-container {
+                    height: 840px;
+                    width: 100%;
+                    padding: 70px 0px;
+                }
+                .form-container {
+                    height: 700px;
+                    width: 350px;
+                    margin: 0 auto;
+                } 
+                .check-in {
+                    width: 300px;
+                }
+                .check-out {
+                    width: 300px;
+                }
+                .destination {
+                    width: 300px;
+                }
+                .adult {
+                    width: 300px;
+                }
+                .children {
+                    width: 300px;
+                }
+                .room {
+                    width: 300px;
+                }
+                .check-button {
+                    width: 300px;
+                }
+                .gen-text {
+                    font-size: 60%;
+                }
+                .text-container {
+                    width: 450px;
+                }
+                .home-section2 {
+                    height: 450px;
+                }
+                .text-container {
+                    width: 350px;
+                }
+                .text-sec2 {
+                    font-size: 150%;
+                }
+                .sec3-part {
+                    width: 350px;
+                    height: 350px;
+                    margin: 20px 0;
+                }
+                .sec3-image {
+                    width: 70px;
+                    margin: 0px 130px;
+                }
+                .home-sec3 {
+                    width: 350px;
+                    padding: 0;
+                }
+                .head-sec3 {
+                    font-size: 120%;
+                }
+                .text-sec3 {
+                    color: darkslategray;
+                    font-size: 100%;
+                    margin: 20px;
+                }
+                .link-for-sec3 {
+                    margin: 0px 20px;
+                }
+            } 
+        </style>
+    </head>
+    <body>
+        <div class="main-head-container" id="head">
+            <div class="main-head">
+                <div><img class="main-image" src="https://media.istockphoto.com/vectors/mountain-icon-vector-id961261400" /></div>
+                <div class="text-head">Winter Spree</div>
+            </div>
+        </div>
+        <div class="top-nav" id="my-topnav">
+            <a class="nav-item active" href="#home">HOME</a>
+            <a class="nav-item" href="#portfolio">PORTFOLIO</a>
+            <a class="nav-item" href="#blog">BLOG ENTRIES</a>
+            <a class="nav-item" href="#contact">CONTACT US</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <div id="home">
+            <div class="image-container">
+                <div class="form-container">
+                    <input class="destination" type="text" placeholder="Type your destination..." />
+                    <input class="check-in" type="text" placeholder="Check In" />
+                    <input class="check-out" type="text" placeholder="Check Out" />
+                    <select class="adult">
+                        <option>Adult</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                    <select class="children">
+                        <option>Children</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>                        
+                    </select>
+                    <select class="room">
+                        <option>Room</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>            
+                    <button class="check-button">CHECK AVAILABILITY</button>
+                    <div class="gen-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                    <div class="help-option">Need help?</div>
+                </div>
+            </div>
+            <div class="home-section2">
+                <div class="text-container">
+                    <div class="text-sec2">How can we help you?</div>
+                    <div class="news-subs">Subscribe to get our newsletters</div>
+                    <div class="div-container">
+                        <button class="subs-btn">SUBSCRIBE NOW</button>
+                    </div>
+                </div>
+            </div>
+            <div class="home-sec3">
+                <div class="sec3-part">
+                    <img src="https://www.pngitem.com/pimgs/m/3-38613_transparent-snowflakes-png-transparent-background-snowflake-clip-art.png" class="sec3-image" />
+                    <div class="head-sec3">Pellentesque accumsan arcu nec dolor tempus</div>
+                    <div class="text-sec3">Pellentesque at velit ante. Duis scelerisque metus vel felis porttitor gravida. Donec at felis libero. Mauris odio tortor.</div>
+                    <div class="link-sec3"><a href="#" class="link-for-sec3">CONTINUE READING...</a></div>
+                </div>
+                <div class="sec3-part">
+                    <img src="https://www.pngitem.com/pimgs/m/3-38613_transparent-snowflakes-png-transparent-background-snowflake-clip-art.png" class="sec3-image" />
+                    <div class="head-sec3">Pellentesque accumsan arcu nec dolor tempus</div>
+                    <div class="text-sec3">Pellentesque at velit ante. Duis scelerisque metus vel felis porttitor gravida. Donec at felis libero. Mauris odio tortor.</div>
+                    <div class="link-sec3"><a href="#" class="link-for-sec3">CONTINUE READING...</a></div>
+                </div>
+                <div class="sec3-part">
+                    <img src="https://www.pngitem.com/pimgs/m/3-38613_transparent-snowflakes-png-transparent-background-snowflake-clip-art.png" class="sec3-image" />
+                    <div class="head-sec3">Pellentesque accumsan arcu nec dolor tempus</div>
+                    <div class="text-sec3">Pellentesque at velit ante. Duis scelerisque metus vel felis porttitor gravida. Donec at felis libero. Mauris odio tortor.</div>
+                    <div class="link-sec3"><a href="#" class="link-for-sec3">CONTINUE READING...</a></div>
+                </div>
+            </div>
+        </div>
+        <div id="portfolio">
+            <div class="portfolio-holder">
+                <div class="sec1-portfolio">
+                    <div class="sec1-pfhead">
+                        <h3>RECOMMENDED PLACES</h3>
+                    </div>
+                    <div class="sec1-holder">
+                        <div class="destination-rec" id="europe-btn" type="button">
+                            <img src="https://www.jetsetter.com/uploads/sites/7/2019/04/GettyImages-529590615-1380x1035.jpg" class="image-pf1" />
+                            <p class="name-pf1">EUROPE</p>
+                        </div>
+                        <div class="destination-rec" id="asia-btn" type="button">
+                            <img src="https://img.traveltriangle.com/blog/wp-content/uploads/2018/06/yangon.jpg" class="image-pf1" />
+                            <p class="name-pf1">ASIA</p>
+                        </div>
+                        <div class="destination-rec" id="australia-btn" type="button">
+                            <img src="https://www.planetware.com/photos-large/AUS/australia-beautiful-places-sydney-harbour.jpg" class="image-pf1" />
+                            <p class="name-pf1">AUSTRALIA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class=sec2-holder>
+                    <div class="shown-element" id="front">
+                        <h1>CAROUSEL</h1>
+                        <img src="https://files.tripstodiscover.com/files/2014/06/Cinque-Tierre.jpg" class="img-first" />
+                        <img src="https://www.roughguides.com/wp-content/uploads/2016/03/pagoda-inthanon-chiang-mai-thailand-shutterstock_236815570-840x561.jpg" class="img-first" />
+                        <img src="https://i.ytimg.com/vi/VEmS-bkdlZQ/maxresdefault.jpg" class="img-first" />
+                    </div>
+                    <div class="sec2-images" id="europe-image">
+                        <img src="https://files.tripstodiscover.com/files/2014/06/Cinque-Tierre.jpg" class="image-style" />
+                        <img src="https://mk0travelawayrru2xew.kinstacdn.com/wp-content/uploads/2015/07/austria-ceu.jpg" class="image-style" />
+                        <img src="https://dianashealthyliving.com/wp-content/uploads/2019/06/eiffel-tower-3349075_1920.jpg" class="image-style" />
+                        <img src="https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/50/2018/06/tom-grimbert-tomgrimbert-661519-unsplash.jpg" class="image-style" />
+                    </div>
+                    <div class="sec2-images" id="asia-image">
+                        <img src="https://www.roughguides.com/wp-content/uploads/2016/03/pagoda-inthanon-chiang-mai-thailand-shutterstock_236815570-840x561.jpg" class="image-style" />
+                        <img src="https://dynaimage.cdn.cnn.com/cnn/q_auto,w_412,c_fill,g_auto,h_232,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F190822235730-02-asia-beautiful-towns.jpg" class="image-style" />
+                        <img src="https://assets.hongkiat.com/uploads/beautiful-temples-asia/sri-sivan-temple-singapore.jpg" class="image-style" />
+                        <img src="https://media.cntraveler.com/photos/576af679c06bba921a97a0b8/master/w_2048,h_1536,c_limit/Chureito-Pagoda-E6HMHF.jpg" class="image-style" />
+                    </div>
+                    <div class="sec2-images" id="australia-image">
+                        <img src="https://i.ytimg.com/vi/VEmS-bkdlZQ/maxresdefault.jpg" class="image-style" />
+                        <img src="https://www.theworldandthensome.com/wp-content/uploads/2019/10/shutterstock_590390942.jpg" class="image-style" />
+                        <img src="https://1.bp.blogspot.com/-1q_AH3XO8So/VONSRl34y_I/AAAAAAAAJxY/xc8RyvBDIgI/s1600/night%2Bview%2Bin%2Bperth%2Baustralia%2B01.jpg" class="image-style" />
+                        <img src="https://www.telegraph.co.uk/content/dam/Travel/2019/March/oz-beach-whitehaven.jpg?imwidth=450" class="image-style" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("my-topnav");
+                if (x.className === "top-nav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "top-nav";
+                }
+            } 
+            document.getElementById("europe-btn").onclick = function() {
+                $("#europe-image").fadeIn("slow");
+                document.getElementById("front").style.display = "none";
+                document.getElementById("asia-image").style.display = "none";
+                document.getElementById("australia-image").style.display = "none";
+            }
+            document.getElementById("asia-btn").onclick = function() {
+                document.getElementById("europe-image").style.display = "none";
+                document.getElementById("front").style.display = "none";
+                $("#asia-image").fadeIn("slow");
+                document.getElementById("australia-image").style.display = "none";
+            }
+            document.getElementById("australia-btn").onclick = function() {
+                document.getElementById("europe-image").style.display = "none";
+                document.getElementById("front").style.display = "none";
+                document.getElementById("asia-image").style.display = "none";
+                $("#australia-image").fadeIn("slow");
+            }
+        </script>
+    </body>
+</html>
